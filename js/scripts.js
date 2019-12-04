@@ -1,7 +1,7 @@
 let repository = [
   {
     name: 'Bellossom',
-    height: .4,
+    height: .41,
     types: ['grass']
   },
   {
@@ -11,7 +11,7 @@ let repository = [
   },
   {
     name: 'Pichu',
-    height: .3,
+    height: .30,
     types: ['electric']
   },
   {
