@@ -4,12 +4,78 @@ General
 ===================================
  */
 
+* {
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%
+  margin-bottom: 50px;
+  background-color: white;
+  border-radius: 5px;
+  border: 3px solid #605d63;
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  line-height: 1.5;
+  margin-top: 50px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f8f2ec;
+  background-image: url("https://mcdn.wallpapersafari.com/medium/63/25/PX8AOd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.infobox {
+  border: 3px solid #605d63;
+  border-radius: 5px;
+  padding: 20px;
+  color: navy;
+  margin-top: 50px;
+  background-color: white;
+}
+
+.logo {
+  margin-left: 20px;
+}
+
+.sealeo {
+  margin-top: 70px;
+  background-color: white;
+  border: 3px solid #605d63;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-radius: 5px;
+}
+
 
 
 
 
 /*
 ===================================
- Navigation
+ Responsive classes
 ===================================
  */
+
+@media all and (max-width: 768px) {
+  .sealeo {
+    width: 100%;
+    background-position: center;
+    padding-top: 70px;
+  }
+
+  .infobox {
+  border: 2px solid black;
+  border-radius: 5px;
+  color: navy;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+}
