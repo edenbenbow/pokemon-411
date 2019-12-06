@@ -23,7 +23,7 @@ const repository = [
 
 
 repository.forEach(function(item) {
-  object.keys(item).forEach(function(key) {
+  Object.keys(item).forEach(function(key) {
     console.log(key + ": " + item[key]);
   });
 });
