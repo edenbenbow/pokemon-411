@@ -1,4 +1,4 @@
-let repository = [
+const repository = [
   {
     name: 'Bellossom',
     height: .41,
@@ -21,14 +21,13 @@ let repository = [
   }
 ];
 
-for (let i = 0; i < repository.length; i++) {
-  if (repository[i].height <= 1.0) {
-    document.write(`${repository[i].name} (height: ${repository[i].height})<br>`);
-  } else {
-    document.write(`${repository[i].name} (height: ${repository[i].height}) - Wow, that\'s   big!<br>`);
-}
 
-}
+repository.forEach(function(item) {
+  Object.keys(item).forEach(function(key) {
+    console.log(key + ": " + item[key]);
+  });
+});
+
 
 
 
