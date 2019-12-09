@@ -1,4 +1,4 @@
-let pokemonRepository = (function(){
+const pokemonRepository = (function(){
     const repository = [
     {
       name: 'Bellossom',
@@ -22,12 +22,6 @@ let pokemonRepository = (function(){
     }
   ];
 
-  repository.forEach(function(item) {
-    Object.keys(item).forEach(function(key) {
-      console.log(key + ": " + item[key]);
-    });
-  });
-
   function getAll() {
     return repository;
   }
@@ -43,6 +37,15 @@ let pokemonRepository = (function(){
     getAll: getAll
   };
 })();
+
+pokemonRepository.getAll().forEach(function (item) {
+    console.log(item)
+    if (item.height > 1) {
+        document.write(item.name + ', height: ' + item.height + ' - WOW! That\'s big! <hr />')
+    } else {
+        document.write(item.name + ', height: ' + item.height + '<hr />')
+    }
+})
 
 
 
