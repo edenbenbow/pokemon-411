@@ -1,3 +1,4 @@
+//Pokemon data
 const pokemonRepository = (function(){
     const repository = [
     {
@@ -22,33 +23,51 @@ const pokemonRepository = (function(){
     }
   ];
 
+  //Pulls all Pokemon data
+
   function getAll() {
     return repository;
   }
 
+  //Pokemon profile details
+
+  function showDetails(pokemon) {
+      console.log("Name: " +pokemon.name + " Height: " +pokemon.height + " Type: " +pokemon.types);
+  }
+
+  //Adds character item to list (w/button and event listener)
+
+  function addListItem(pokemon) {
+      let $pokemonList = document.querySelector('ul');
+      let $listItem = document.createElement('li');
+      let $button = document.createElement('button');
+      $button.innerText = pokemon.name;
+      $button.classList.add('menu-btn');
+      $listItem.appendChild($button);
+      $pokemonList.appendChild($listItem);
+      $listItem.classList.add('menu-item');
+      $button.addEventListener('click', function(event) {
+          showDetails(pokemon);
+      })
+  }
+
   function add(pokemon) {
-    if (typeof pokemon === "object"){
-      repository.push(pokemon);
-    }
+      if (typeof pokemon === "object") {
+          repository.push(pokemon);
+      }
   }
 
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem,
+    showDetails: showDetails
   };
 })();
 
-pokemonRepository.getAll().forEach(function (item) {
-    console.log(item)
-    if (item.height > 1) {
-        document.write(item.name + ', height: ' + item.height + ' - WOW! That\'s big! <hr />')
-    } else {
-        document.write(item.name + ', height: ' + item.height + '<hr />')
-    }
-})
 
+let $pokemonList = document.querySelector('ul');
 
-
-
-
-   
+pokemonRepository.getAll().forEach(function(item) {
+    pokemonRepository.addListItem(item);
+});
