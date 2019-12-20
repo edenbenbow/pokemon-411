@@ -51,7 +51,7 @@ const pokemonRepository = (function(){
     }
 
     function add(pokemon) {
-        if (typeof pokemon === "object") {
+        if (typeof pokemon === 'object') {
             repository.push(pokemon);
         }
     }
@@ -64,9 +64,9 @@ const pokemonRepository = (function(){
             // Now we add the details to the item
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
-            item.types = "";
+            item.types = '';
             Object.values(details.types).forEach(function (item2){
-                item.types += (item.types.length !== 0?", ":"") + item2.type.name;
+                item.types += (item.types.length !== 0?', ':'') + item2.type.name;
             });
         }).catch(function (e) {
             console.error(e);
